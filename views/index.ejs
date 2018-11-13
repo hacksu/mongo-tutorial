@@ -28,19 +28,19 @@
         <button id="cancel-button" style="display:none; margin-left: 40px; width:100px" onclick="hideAddTask()">Cancel</button>
 
         <div class="task-container">
-            <!-- <% //for(let i = 0; i < todoList.length; i++) { %>
+            <% for(let i = 0; i < todoList.length; i++) { %>
                 <div class="task">
                     <div class="task-header">
-                        <a href="/complete/<%= //todoList[i]._id %>">Complete</a> &nbsp;
-                        <a href="/delete/<%= //todoList[i]._id %>">Delete</a>
+                        <a href="/complete/<%= todoList[i]._id %>">Complete</a> &nbsp;
+                        <a href="/delete/<%= todoList[i]._id %>">Delete</a>
                     </div>
-                    <div class="task-content"> <%= //todoList[i].task %> </div>
+                    <div class="task-content"> <%= todoList[i].task %> </div>
                 </div>
-            <% //} %> -->
-            <div class="task">
+            <% } %>
+            <!-- <div class="task">
                 <div class="task-header"></div>
-                <div class="task-content">Test task</div>
-            </div>
+                <div class="task-content">Beesechurger</div>
+            </div> -->
         </div>
     </body>
 </html>
