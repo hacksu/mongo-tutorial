@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>ToDo App</title>
+
+        <link href="/css/styles.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>ToDo App</h1>
+            
+            <p><i>This is a cool app I spent too much time on</i></p>
+        </div>
+        <br>
+
+        <button id="toggle-button" onclick="toggleAddTask()">Add a new Task</button>
+
+        <form id="new-task" action="/add" method="POST">
+            New task:
+            <input name="item" type="text">
+            <br>
+
+            <button style="width:100px;" type="submit">Create Task</button>
+        </form>
+        <button id="cancel-button" style="display:none; margin-left: 40px; width:100px" onclick="hideAddTask()">Cancel</button>
+
+        <div class="task-container">
+            <% for(let i = 0; i < todoList.length; i++) { %>
+                <div class="task">
+                    <div class="task-header">
+                        <a href="/complete/<%= todoList[i]._id %>">Complete</a> &nbsp;
+                        <a href="/delete/<%= todoList[i]._id %>">Delete</a>
+                    </div>
+                    <div class="task-content"> <%= todoList[i].task %> </div>
+                </div>
+            <% } %>
+            <!-- <div class="task">
+                <div class="task-header"></div>
+                <div class="task-content">Beesechurger</div>
+            </div> -->
+        </div>
+    </body>
+</html>
